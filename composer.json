@@ -1,0 +1,15 @@
+{
+    "name": "seco/compo",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "ikerseco",
+            "email": "garrantsitsua@gmail.com"
+        }
+    ],
+    "require": {
+        "minishlink/web-push": "^6.0",
+        "kint-php/kint": "^3.3"
+    }
+}

@@ -10,6 +10,7 @@
     ],
     "require": {
         "minishlink/web-push": "^6.0",
-        "kint-php/kint": "^3.3"
+        "kint-php/kint": "^3.3",
+        "mdanter/ecc": "^0.5.2"
     }
 }

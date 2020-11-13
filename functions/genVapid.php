@@ -1,5 +1,19 @@
 <?php
 function VapidUrl(){
+  //public
+  $publicKey = fopen("../public_key.txt","r") or die("no se ha encontrado public_key.txt");
+  $readPubli = fread($publicKey,filesize("../public_key.txt"));
+  fclose($publicKey);
+  //pribate
+  $pribateKey = fopen("../private_key.txt","r") or die("no se ha encontrado public_key.txt");
+  $readPribate = fread($pribateKey,filesize("../private_key.txt"));
+  fclose($pribateKey);
+  $arr = array(
+    'pribate' => $readPribate,
+    'public' => $readPubli
+  );
+  return json_encode($arr);
+  /*
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -19,6 +33,7 @@ function VapidUrl(){
     $err = curl_error($curl);
     //print_r($response);
     curl_close($curl);
-    return $response; 
+    return $response;
+    */ 
 }
 ?>

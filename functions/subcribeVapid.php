@@ -7,15 +7,17 @@
     
     $genVapid = VapidUrl();
     
-
     $DatJsonIns = json_decode($genVapid);
-    //insertar usuario
+
+   
+    //insertar 
+    
     $insert = $conect -> prepare("INSERT INTO users (user,keyPribate,keyPublic) VALUES (:user,:keyPribate,:keyPublic)");
     
     //keys
     $user = $getName;
-    $keyPribate = $DatJsonIns->{'publicKey'};
-    $keyPublic = $DatJsonIns->{'pribateKey'};
+    $keyPribate = $DatJsonIns->{'pribate'};
+    $keyPublic = $DatJsonIns->{'public'};
      
 
     

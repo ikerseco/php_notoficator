@@ -1,6 +1,6 @@
 <?php
 require "../vendor/autoload.php";
-require "getUser.php";
+require "./sqlFunc/getUser.php";
 require "../conect.php";
 use Minishlink\WebPush\WebPush;
 use Minishlink\WebPush\Subscription;
@@ -12,13 +12,13 @@ $name = $_GET['name'];
 $select = userName($name,$conect);
 
 //urlpoint
-$urlpoint = $select[0]["urlpoint"];
+$urlpoint = $select[0]["endpoint"];
+
 
 //Vpribate
-$keyPribate = $select[0]["keyPribate"];
+$vapidKeysG = $select[0]["vapidKeys"];
 
-//Vpublic
-$keyPublic = $select[0]["keyPublic"];
+//$jsonVpid = json_decode($vapidKeysG);
 
 //p256dh
 $p256dh = $select[0]["p256dh"];

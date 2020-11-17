@@ -3,39 +3,28 @@
 
     //user name 
     $Name = $_POST["name"]; 
-    print_r("\n");
-    print_r("name:");
-    print_r($Name);
 
-    //Auth
-    print_r("\n");
-    print_r("auth:");
-    $auth = $_POST["auth"];
-    print_r($auth);
 
-    //p256h
-    print_r("\n");
-    print_r("p256dh:");
-    $p256dh = $_POST["p256dh"];
-    print_r($p256dh);
+    $p256dh = $_POST["p256dh"]; 
+  
 
-    
-    print_r("\n");
-    print_r("endpoint:");
-    //endpoint
-    $endpoint = $_POST["urlpoint"];
-    print_r($endpoint);
+    $auth = $_POST["auth"]; 
+  
 
-    
-   $insert = $conect -> prepare('UPDATE users SET urlpoint = :urlpoint, 
+    $endpoint = $_POST["endpoint"]; 
+
+
+
+    $insert = $conect -> prepare('UPDATE users SET endpoint = :endpoint, 
     p256dh = :p256dh, auth = :auth   
     WHERE user = :user');
     
     
     
-    $insert -> bindParam(':urlpoint',$endpoint);
+    
     $insert -> bindParam(':p256dh',$p256dh);
     $insert -> bindParam(':auth',$auth);
+    $insert -> bindParam(':endpoint',$endpoint);
     $insert -> bindParam(':user',$Name);
     
     $insert -> execute();

@@ -3,7 +3,7 @@
     require "genVapid.php";
 
 
-    $getName = $_GET["jsonVapid"];
+    $getName = $_POST["name"];
     
     $genVapid = VapidUrl();
     
@@ -12,7 +12,7 @@
    
     //insertar 
     
-    $insert = $conect -> prepare("INSERT INTO users (user,keyPribate,keyPublic) VALUES (:user,:keyPribate,:keyPublic)");
+    $insert = $conect -> prepare("INSERT INTO users (user,vapidKeys) VALUES (:user,:vapidKeys)");
     
     //keys
     $user = $getName;
@@ -21,8 +21,7 @@
      
 
     
-    $insert -> bindParam(':keyPribate',$keyPribate);
-    $insert -> bindParam(':keyPublic',$keyPublic);
+    $insert -> bindParam(':vapidKeys',$genVapid);
     $insert -> bindParam(':user',$user);
     
     $insert -> execute();

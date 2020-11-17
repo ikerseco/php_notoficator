@@ -13,4 +13,6 @@ li{
 .devFelx{
     position: fixed;
     flex-direction: row;
+    align-content: flex-end;
+    width: 40%;
 }

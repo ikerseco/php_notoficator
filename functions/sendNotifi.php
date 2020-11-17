@@ -5,7 +5,16 @@ require "../conect.php";
 use Minishlink\WebPush\WebPush;
 use Minishlink\WebPush\Subscription;
 
-$name = $_GET['name'];
+$name = $_POST['name'];
+
+$payDAt = $_POST['payload'];
+
+
+$arr = array(
+    'msg' => $payDAt,
+);
+
+$payload = json_encode($arr);
 
 
 
@@ -27,8 +36,7 @@ $p256dh = $select[0]["p256dh"];
 $auth = $select[0]["auth"];
 
 
-print_r(strlen($keyPribate));
-print_r(strlen($keyPublic));
+
 
 //auth Vapid
 $vapid = array(
@@ -51,7 +59,7 @@ $notification = [
             'auth' => $auth
         ],
     ]),
-    'payload' => '{"msg":"Hello World!"}',
+    'payload' => $payload,
 ];
 //print_r($select[0]);
 

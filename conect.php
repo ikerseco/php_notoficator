@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=vapikey;host=localhost';
+$dsn = 'mysql:dbname=test;host=localhost';
 $usuario = 'root';
 $contraseña = '';
 

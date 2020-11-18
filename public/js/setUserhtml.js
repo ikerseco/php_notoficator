@@ -11,7 +11,7 @@ const setUsers = async ()=>{
             html += `
             <div class="p-2">
                 <div class="card car" style="width: 18rem;">
-                  <img src="public/jpg/unsplash.jpg" class="card-img-top" alt="...">
+                  <img src="../jpg/unsplash.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                       <h5 class="card-title">User</h5>
                       <h6 class="card-subtitle mb-2 text-muted">${elm.user}</h6>
@@ -39,7 +39,7 @@ const visualSync = async ()=>{
         let user = $(this).data("name");
         localStorage.setItem('userSeclt',user)
 
-        location.href = "http://localhost/php_notoficator/public/html/user.html";
+        location.href = "http://localhost/php_notoficator/public/html/user.php";
     });  
 }
 

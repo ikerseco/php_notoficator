@@ -9,9 +9,12 @@ $name = $_POST['name'];
 
 $payDAt = $_POST['payload'];
 
+$Icono = $_POST['icono']; 
+
 
 $arr = array(
     'msg' => $payDAt,
+    'icon' => $Icono
 );
 
 $payload = json_encode($arr);
@@ -72,26 +75,4 @@ $webPush -> sendOneNotification(
     $notification['subscription'],
     $notification['payload'] // optional (defaults null)
 );
-
-//$arr = var_dump($select[5]);
-
-/*
-print_r($select["keyPublic"]);
-print_r("\n");
-print_r($select["keyPribate"]);
-*/
-
-
-//auth/
-/*
-$auth = [
-    'VAPID' => [
-        'subject' => 'mailto:me@website.com', // can be a mailto: or your website address
-        'publicKey' => '', // (recommended) uncompressed public key P-256 encoded in Base64-URL
-        'privateKey' => '~44 chars', // (recommended) in fact the secret multiplier of the private key encoded in Base64-URL
-    ],
-];
-
-$webPush = new WebPush($auth);
-*/
 ?>

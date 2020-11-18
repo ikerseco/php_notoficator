@@ -1,5 +1,4 @@
 <?php
-require '../conect.php';
 function userName($getName,$conect){
     $sql = "SELECT * FROM  users WHERE user = :USER";
     $request = $conect->prepare($sql);

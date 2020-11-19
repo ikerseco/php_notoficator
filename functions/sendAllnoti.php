@@ -31,7 +31,7 @@ $alluser = alluser($conect);
 echo $alluser;
 
 
-$arr = [];
+$notification = [];
 
 foreach ($alluser as $alluser) {
     $arr =  [
@@ -44,8 +44,15 @@ foreach ($alluser as $alluser) {
         ]),
         'payload' => $payload,
         ];    
-    array_push($arr);
+    array_push($notification,$arr);
 }
+
+foreach($notification as $notification){
+    $webPush -> queueNotification(
+        $notification['subscription'],
+        $notification['payload'] // optional (defaults null)
+    );
+};
 
 
 

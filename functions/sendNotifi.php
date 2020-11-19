@@ -24,7 +24,7 @@ $payload = json_encode($arr);
 $select = userName($name,$conect);
 
 //urlpoint
-$urlpoint = $select[0]["endpoint"];
+$urlpoint = $select[0]["urlendpoint"];
 
 
 //Vpribate
